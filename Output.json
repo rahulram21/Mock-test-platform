@@ -1,0 +1,38 @@
+[
+  {
+    "id": "11",
+    "question": "fruit",
+    "option1": "mango",
+    "option2": "apple",
+    "option3": "nuts",
+    "option4": "banana",
+    "answer": "apple"
+  },
+  {
+    "id": "22",
+    "question": "car",
+    "option1": "ferrari",
+    "option2": "benz",
+    "option3": "bmw",
+    "option4": "lambo",
+    "answer": "ferrari"
+  },
+  {
+    "id": "33",
+    "question": "animal",
+    "option1": "dog",
+    "option2": "cat",
+    "option3": "cow",
+    "option4": "crow",
+    "answer": "cat"
+  },
+  {
+    "id": "44",
+    "question": "dress",
+    "option1": "pants",
+    "option2": "shirt",
+    "option3": "hat",
+    "option4": "scarf",
+    "answer": "shirt"
+  }
+]
