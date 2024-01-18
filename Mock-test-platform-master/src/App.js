@@ -89,7 +89,7 @@ function Time(){
       return (minutes < 10 ? '0' : '') + minutes + ':' + (seconds < 10 ? '0' : '') + seconds;
     }
   }
-  return <div className="row "><div class="col s12 m6 "><a class="waves-effect waves-light btn col s3 offset-s8">Date :{date.getDate()}-{date.getMonth()+1}-{date.getFullYear()}</a></div><div><a class="waves-effect waves-light btn">Time :{getFormattedTime()}</a></div></div>
+  return <div className="row "><div class="col s12 m6 "><h2 class="waves-effect waves-light btn col s3 offset-s8">Date : {date.getDate()}-{date.getMonth()+1}-{date.getFullYear()}</h2></div><div class="colour"><h2 class="waves-effect waves-light btn">Time  : {getFormattedTime()}</h2></div></div>
 }
 
 function Form(){
@@ -107,11 +107,10 @@ function Form(){
     
       
    
-   <div >
+    <div class="sub">
     
-   <a class="waves-effect waves-light btn">button</a>
-   </div>
-
+    <input type="submit" class="waves-effect waves-light btn" name="Submit" />
+    </div>
 
    
     
