@@ -3,29 +3,19 @@ const csv = require('csvtojson');
 const fs = require('fs');
 
 csv({
-  headers: ['id',
-  'question',
-  'option1',
-  'option2',
-  'option3',
-  'option4',
-  'answer'],
   colParser: {
     'options': (item, head, resultRow, row, colIdx) => {
       const options = ['option1','option2','option3','option4']
       .map(option => resultRow[option])
       .filter(Boolean);
 
-      //delete the original option columns from the resultRow
-      // ['option1','option2','option3','option4'].forEach(option => {
-      //   delete resultRow[option];
-      // })
       return {
         id: 'id',
         question: 'question',
         options: 'options',
-        answer: 'answer'
+        answer: 'answer',
       }
+      //colParser method parses the different options columns to a single array of 'options'
     },
   },
 })
@@ -38,7 +28,7 @@ csv({
         options: ['option1','option2','option3','option4']
         .map(option => obj[option])
         .filter(Boolean),
-        answer: obj.answer,
+        answer:  obj.answer,
       }
     })
     console.log(modifiedJson);
