@@ -48,7 +48,7 @@ app.listen(port, ()=>{
 })
 
 
-mongoose.connect('mongodb+srv://luhar270698:Softie%40321@mock-testapi.mflhpmz.mongodb.net/Node-API?retryWrites=true&w=majority')
+mongoose.connect('idddd')
 .then(()=>{
   console.log("Connected to database");
 }).catch((err)=>{
