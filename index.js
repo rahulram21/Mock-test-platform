@@ -53,7 +53,7 @@ app.get('/', (req,res)=>{
 app.listen(port, ()=>{
   console.log('Connected to port 3000');
 })
-/*******************************/
+
 
 //json middleware
 app.use(express.json())
