@@ -1,11 +1,13 @@
-// run `node index.js` in the terminal
+
 const csv = require('csvtojson');
 const fs = require('fs');
 const mongoose = require('mongoose')
 const express = require('express');
 const app = express();
+const jsonData = require('./Output.json');
+const Test = require('./Model');
 
-/*******csv to json parsing*******/
+/***********************csv to json parsing*****************************/
 csv({
   colParser: {
     'options': (item, head, resultRow, row, colIdx) => {
@@ -38,19 +40,39 @@ csv({
     //console.log(modifiedJson);
     fs.writeFileSync('./Output.json', JSON.stringify(modifiedJson, null, 2));
   });
-/*******************/
+/*******************************************************************/
+
+
+
 const port = 3000;
+
+/*******Testing the server******/
 app.get('/', (req,res)=>{
   res.send('Hello world');
 })
 app.listen(port, ()=>{
   console.log('Connected to port 3000');
 })
+/*******************************/
 
+//json middleware
+app.use(express.json())
 
-mongoose.connect('mongodb+srv://luhar270698:Softie%40321@mock-testapi.mflhpmz.mongodb.net/Node-API?retryWrites=true&w=majority')
+app.post('/admin', async(req,res)=>{
+  try {
+    const newTest = await Test.create(jsonData);
+    res.status(200).json(newTest);
+  } catch (error) {
+    console.log(error.message);
+    
+  }
+})
+
+/************************MongoDB initialization*******************************/
+mongoose.connect('mongodb+srv://luhar270698:Rahul%40123@mock-testapi.mflhpmz.mongodb.net/Node-API?retryWrites=true&w=majority')
 .then(()=>{
   console.log("Connected to database");
 }).catch((err)=>{
   console.log(err);
 })
+/******************************************************************************/

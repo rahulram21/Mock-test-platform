@@ -1,0 +1,19 @@
+1. Function to POST data from the endpoint '/admin' to the db
+2. Need a seperate endpoint or not? For seprate endpoint, the front end should be configured to redirect to that endpoint(admin)
+3. app.POST('/admin', async(req,res) => {
+    try{
+
+    }
+    catch{
+        error
+    }
+})
+4. New db collection to be defined each time? Or shall I let it to define on default?
+
+
+28-01-2024 : 12:08
+
+Succesfully sent the data to mongodb and I can view them in the collections (Tested with Insomnia)
+Since I created the schema in a way that each question and answer set is shown as different queries. Should I keep them as it is or should I capture all the question sets in a single query?
+-- Need to verify if end user can fetch an entire collection or one query at a time?
+   An entire collection can be called. I have to review more about fetching this API
