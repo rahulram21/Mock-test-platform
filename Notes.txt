@@ -17,3 +17,10 @@ Succesfully sent the data to mongodb and I can view them in the collections (Tes
 Since I created the schema in a way that each question and answer set is shown as different queries. Should I keep them as it is or should I capture all the question sets in a single query?
 -- Need to verify if end user can fetch an entire collection or one query at a time?
    An entire collection can be called. I have to review more about fetching this API
+
+29-01-2024 : 7:20
+
+* We have to make an idea how the data should be fetched. Because, when a user uploads a csv, it should return the json of that csv only but not of any other csv which were added previously. To fetch individual data, ID can be used to retrive individual data. But client is not sure what the ID will be. They won't be dealing with the code.
+-- I'm thinking of clearing each queries when a new query comes (overwriting). This way, client can fetch exactly what it is in the database. But not sure how practical this could be because storing the previous data is also important.
+-- Another way is assigning a token to each user based on the file they're uploading and assigning the same token to that particular query. By doing so, we will be able to fetch exactly the correct data.
+-- Today, I'm going to test how our code deals with different data uploads.
